@@ -1,13 +1,17 @@
-const path = require("path");
+import path from "path";
+import { fileURLToPath } from "url";
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default {
   mode: "production",
   entry: {
     app: "./src/app.ts",
     largeModule: "./src/largeModule.ts",
   },
   output: {
-    filename: "[name]-[contenthash].js",
+    filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
   },
   module: {
