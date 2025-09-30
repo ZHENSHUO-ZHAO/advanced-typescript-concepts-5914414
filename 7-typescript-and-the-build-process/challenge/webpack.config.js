@@ -2,7 +2,10 @@ const path = require("path");
 
 module.exports = {
   mode: "production",
-  entry: "./src/app.ts",
+  entry: {
+    app: "./src/app.ts",
+    largeModule: "./src/largeModule.ts",
+  },
   output: {
     filename: "[name]-[contenthash].js",
     path: path.resolve(__dirname, "dist"),
